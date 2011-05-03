@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+    <field key="author" value="Andras Szepeshazi" />
+    <field key="version" value="1.0.0" />
+    <field key="description" value="Content debugger" />
+    <field key="website" value="http://wamped.org/" />
+    <field key="copyright" value="(C) Andras Szepeshazi" />
+    <field key="licence" value="GNU Public License version 2" />
+    <field key="elgg_version" value="2010071002" />
+</plugin_manifest>
