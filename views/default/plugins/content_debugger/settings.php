@@ -51,7 +51,7 @@
 
     <label><?php echo elgg_echo('content_debugger:tab_stop'); ?></label>
     <br />
-    <?php echo elgg_view('input/text',array('internalname' => 'params[tab_stop]', 'value' => $vars['entity']->tab_stop)); ?>
+    <?php echo elgg_view('input/text',array('name' => 'params[tab_stop]', 'value' => $vars['entity']->tab_stop)); ?>
     <br /><br />
 
     <label><?php echo elgg_echo('content_debugger:magicmarker'); ?></label>
@@ -64,7 +64,7 @@
 
     <label><?php echo elgg_echo('content_debugger:css_highlight'); ?></label>
     <br />
-    <?php echo elgg_view('input/text',array('internalname' => 'params[css_highlight]', 'value' => $vars['entity']->css_highlight)); ?>
+    <?php echo elgg_view('input/text',array('name' => 'params[css_highlight]', 'value' => $vars['entity']->css_highlight)); ?>
     <br /><br />
 
 </p>
