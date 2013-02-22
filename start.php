@@ -18,19 +18,19 @@
      * Content debugger initialization
      */
     function content_debugger_init() {
-        global $CONFIG;
 
-        if (isadminloggedin()) {
+        if (elgg_is_admin_logged_in()) {
             run_function_once('content_debugger_first_run');
-            register_page_handler('content_debugger','content_debugger_page_handler');
-            elgg_extend_view('metatags', 'content_debugger/metatags');
-            elgg_extend_view('elgg_topbar/extend', 'content_debugger/menu');
+            elgg_register_page_handler('content_debugger','content_debugger_page_handler');
+			
+			$item = new ElggMenuItem('content_debugger', elgg_echo('content_debugger:toggle'), 'content_debugger/toggle');
+			$item->setPriority(1000);
+			elgg_register_menu_item('topbar', $item);
 
             if ($_SESSION['content_debugger'] === 'enabled') {
-                elgg_extend_view('metatags', 'content_debugger/active_metatags');
-                register_elgg_event_handler('pagesetup','system','content_debugger_profiler_start');
-                register_plugin_hook('display', 'view', 'content_debugger_view_hook', 1000);
-                set_view_location('page_elements/header', $CONFIG->pluginspath . 'content_debugger/views/mod/');
+                elgg_extend_view('page/elements/head', 'content_debugger/active_metatags');
+                elgg_register_event_handler('pagesetup','system','content_debugger_profiler_start');
+                elgg_register_plugin_hook_handler('view', 'all', 'content_debugger_view_hook', 1000);
             }
 
         }
@@ -57,7 +57,5 @@
         }
     }
 
-    global $CONFIG;
-    register_elgg_event_handler('init','system','content_debugger_init');
 
-?>
+    elgg_register_event_handler('init','system','content_debugger_init');

@@ -1,5 +1,5 @@
 <?php
-    $plugin  = find_plugin_settings('content_debugger');
+    $plugin  = elgg_get_plugin_from_id('content_debugger');
 ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $vars['url']; ?>mod/content_debugger/js/poshytip-1.0/src/tip-yellow/tip-yellow.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vars['url']; ?>mod/content_debugger/_css/poshytip_custom.css" media="screen" />
