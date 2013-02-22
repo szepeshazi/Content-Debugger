@@ -1,1 +1,0 @@
-<link rel="stylesheet" type="text/css" href="<?php echo $vars['url']; ?>mod/content_debugger/_css/content_debugger.css" media="screen" />
