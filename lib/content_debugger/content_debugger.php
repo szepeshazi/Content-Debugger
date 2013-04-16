@@ -17,7 +17,7 @@
     function content_debugger_ignore_view($view) {
         $ignore_view = true;
         $whitelist = array('profile/icon');
-        $blacklist = array('icon', 'input/securitytoken', 'input/hidden', 'output/url' );
+        $blacklist = array('icon', 'input/securitytoken', 'input/hidden', 'output/url', 'js');
 
         // Check for whitelisted views
         foreach ($whitelist as $current_view) {
@@ -39,9 +39,9 @@
     }
 
     function content_debugger_profiler_start($event, $object_type, $object) {
-        global $timestamps;
-        $timestamps->start = microtime(true);
-        $timestamps->last = $timestamps->start;
+        global $content_debugger_timestamps;
+        $content_debugger_timestamps->start = microtime(true);
+        $content_debugger_timestamps->last = $content_debugger_timestamps->start;
     }
 
     /**
@@ -54,21 +54,21 @@
      * @return string A json encoded object wrapped in an html comment, holding information about the current view
      */
     function content_debugger_view_hook($hook, $entity_type, $returnvalue, $params) {
-        global $timestamps;
+        global $content_debugger_timestamps;
         if (!content_debugger_ignore_view($params['view'])) {
             $now = microtime(true);
-            $render_time = $now - $timestamps->last;
-            $total_time = $now - $timestamps->start;
-            $timestamps->last = $now;
+            $render_time = $now - $content_debugger_timestamps->last;
+            $total_time = $now - $content_debugger_timestamps->start;
+            $content_debugger_timestamps->last = $now;
             if ($returnvalue) {
                 $unique_id = sha1(rand());
 
                 $view_info_begin = new stdClass();
                 $view_info_begin->view = $params['view'];
                 $view_info_begin->id = $unique_id;
-                $view_info_begin->render_time = number_format($render_time, 6) . 'ms';
-                $view_info_begin->total_time = number_format($total_time, 6) . 'ms';
-                $view_info_begin->view_details = content_debugger_view_details($params['view']);
+                $view_info_begin->renderTime = number_format($render_time, 6) . 'ms';
+                $view_info_begin->totalTime = number_format($total_time, 6) . 'ms';
+                $view_info_begin->viewDetails = content_debugger_view_details($params['view']);
 
                 $view_info_start = json_encode($view_info_begin);
                 $wrap_before = "<!-- content_debugger_view_start::{$view_info_start}  -->";

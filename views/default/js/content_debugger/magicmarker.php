@@ -1,3 +1,5 @@
+<?php if (false): ?><script type="text/javascript"><?php endif; ?>
+
 /*
  * Magic marker
  *
@@ -163,3 +165,4 @@
     };
 
 })(jQuery);
+<?php if (false): ?></script><?php endif; ?>
