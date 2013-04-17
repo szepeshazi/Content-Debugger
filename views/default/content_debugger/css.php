@@ -4,9 +4,6 @@ $css_path = '/vendors/poshytip-1.0/src/tip-yellow/';
 $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 ?>
 
-
-
-
 <?php if (false) : ?><style><?php endif; ?>
 
 .tip-yellow {
@@ -26,6 +23,7 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 	 *   set the background-image to .tip-inner instead.
 	 */
 }
+
 .tip-yellow .tip-inner {
 	font:bold 13px/18px 'trebuchet ms',arial,helvetica,sans-serif;
 	margin-top:-2px;
@@ -42,6 +40,7 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 	height:10px;
 	background:url("<?php echo $img_baseurl; ?>tip-yellow_arrows.png") no-repeat;
 }
+
 .tip-yellow .tip-arrow-right {
 	margin-top:-9px; /* approx. half the height to center it */
 	margin-left:-4px;
@@ -51,6 +50,7 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 	height:20px;
 	background:url("<?php echo $img_baseurl; ?>tip-yellow_arrows.png") no-repeat -16px 0;
 }
+
 .tip-yellow .tip-arrow-bottom {
 	margin-top:-6px;
 	margin-left:15px;
@@ -60,6 +60,7 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 	height:13px;
 	background:url("<?php echo $img_baseurl; ?>tip-yellow_arrows.png") no-repeat -32px 0;
 }
+
 .tip-yellow .tip-arrow-left {
 	margin-top:-9px; /* approx. half the height to center it */
 	margin-left:-6px;
@@ -70,6 +71,19 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 	background:url("<?php echo $img_baseurl; ?>tip-yellow_arrows.png") no-repeat -48px 0;
 }
 
+.tip-yellow .tip-inner {
+    padding: 0px;
+    margin: 0px;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.tip-yellow .tip-inner ul {
+    margin: 0px 0px 0px 12px;
+    font-style: italic;
+    list-style: square;
+}
+
 .elgg-icon-info-active {
 	background-position: 0 -468px;
 }
@@ -77,6 +91,5 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
 .elgg-icon-info-active:hover {
 	background-position: 0 -486px;
 }
-
 
 <?php if (false) : ?></style><?php endif; ?>
