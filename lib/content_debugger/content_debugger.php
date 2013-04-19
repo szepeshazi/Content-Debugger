@@ -121,3 +121,7 @@ function content_debugger_view_details($view) {
 
 	return $results;
 }
+
+function content_debugger_get_ui_type() {
+	return strpos($_SERVER['HTTP_REFERER'], elgg_get_site_url() . 'admin') === 0 ? 'admin' : 'frontend';
+}

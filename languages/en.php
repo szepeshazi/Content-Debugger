@@ -19,7 +19,10 @@
             'content_debugger:disable' => "Disable",
 
             'content_debugger:toggle' => "Toggle Debugger",
-
+            
+            'content_debugger:toggle:enabled' => "(-) Content debugger",
+            'content_debugger:toggle:disabled' => "(+) Content debugger",
+    
     );
 
     add_translation("en",$english);

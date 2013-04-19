@@ -75,13 +75,14 @@ $img_baseurl = elgg_get_site_url().'mod/'.$base_name.$css_path;
     padding: 0px;
     margin: 0px;
     font-size: 11px;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .tip-yellow .tip-inner ul {
     margin: 0px 0px 0px 12px;
     font-style: italic;
     list-style: square;
+    font-weight: normal;
 }
 
 .elgg-icon-info-active {
