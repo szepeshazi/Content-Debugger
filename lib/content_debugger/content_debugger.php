@@ -1,18 +1,5 @@
 <?php
 
-/**
- * Creates default plugin settings upon first run
- */
-function content_debugger_first_run() {
-	elgg_set_plugin_setting('display_depth', '0');
-	elgg_set_plugin_setting('show_view_name', '1');
-	elgg_set_plugin_setting('show_view_files', '1');
-	elgg_set_plugin_setting('show_profiling', '1');
-	elgg_set_plugin_setting('tab_stop', '10');
-	elgg_set_plugin_setting('magicmarker', '1');
-	elgg_set_plugin_setting('css_highlight', '');
-}
-
 function content_debugger_ignore_view($view) {
 	$ignore_view = true;
 	$whitelist = array('profile/icon');
@@ -123,5 +110,5 @@ function content_debugger_view_details($view) {
 }
 
 function content_debugger_get_ui_type() {
-	return strpos($_SERVER['HTTP_REFERER'], elgg_get_site_url() . 'admin') === 0 ? 'admin' : 'frontend';
+	return elgg_in_context('admin') ? 'admin' : 'frontend';
 }
