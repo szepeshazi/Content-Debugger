@@ -1,0 +1,10 @@
+1.1.0 - released 22nd April, 2013
+---------------------------------
+Compatibility upgrade for Elgg 1.8
+Debugger for frontend and admin interfaces can be toggled separately
+Special thanks to Matt Beckett for his contribution on Elgg 1.8 compatibility
+
+
+1.0.0 - released 21st April, 2011
+---------------------------------
+Initial release
