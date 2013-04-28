@@ -1,5 +1,7 @@
-<?php $plugin = elgg_get_plugin_from_id('content_debugger'); ?>
-
+<?php 
+	$base_name = basename(dirname(dirname(dirname(dirname(dirname(__FILE__))))));
+	$plugin = elgg_get_plugin_from_id($base_name); 
+?>
 <?php if (false) : ?><script type="text/javascript"><?php endif; ?>
 
 elgg.provide('elgg.content_debugger');

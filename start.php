@@ -23,7 +23,7 @@ function content_debugger_init() {
 		elgg_register_page_handler('content_debugger', 'content_debugger_page_handler');
 
 		$base_name = basename(dirname(__FILE__));
-		$path = elgg_get_plugins_path().$base_name;
+		$path = elgg_get_plugins_path() . $base_name;
 		elgg_register_library('content_debugger', $path.'/lib/content_debugger/content_debugger.php');
 		elgg_load_library('content_debugger');
 
